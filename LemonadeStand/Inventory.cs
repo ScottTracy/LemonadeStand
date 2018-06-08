@@ -6,30 +6,28 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Inventory
-    {
-        public int cupsOfSugar;
-        public int lemons;
-        public int cups;
-        public int cupsOfIce;
-        public double Money = 20.00;
-        public int cupsInPitcher;
-
-        public void MakePitcher()
+    public class Inventory
+    {               
+                
+        public double Money;
+        public int cupsInPitcher = 8;
+        public Dictionary<string, int> inventory = new Dictionary<string, int> { { "cups of sugar", 100 }, { "lemons", 100 }, { "cups of ice", 100 },{ "cups", 100} };
+        public void MakePitcher(Dictionary<string, int> recipe)
         {
-
-        }
-        public void ReduceInventory(double item,double quantity)
-        {
-            if (item >= quantity)
+            foreach (KeyValuePair<string, int> ingredient in recipe)
             {
-                item -= quantity;
+                inventory[ingredient.Key] -= recipe[ingredient.Key];
             }
-            else {
-                Console.WriteLine("Insufficient quantity");
-                    }
         }
-
+        public void DisplayInventory()
+        {
+            foreach (KeyValuePair<string, int> item in inventory)
+            {
+                Console.WriteLine(item.Key + " : " + item.Value);
+            }
+            Console.ReadLine();
+        }
+       
 
         
      
