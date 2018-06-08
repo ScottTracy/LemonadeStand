@@ -11,7 +11,7 @@ namespace LemonadeStand
 
         public int cupsPerPitcher = 8;
         public Dictionary<string, int> recipe = new Dictionary<string, int> { { "cups of sugar", 0 }, { "lemons", 0 }, { "cups of ice", 0 } };
-        public Dictionary<string, int> looper = new Dictionary<string, int>();
+        private Dictionary<string, int> looper = new Dictionary<string, int>();
         public void DetermineRecipe()
         {
             foreach (KeyValuePair<string, int> ingredient in recipe)
