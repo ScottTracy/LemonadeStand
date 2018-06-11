@@ -10,14 +10,7 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
-            Recipe cookbook = new Recipe();
-            Inventory items = new Inventory();
-            items.DisplayInventory();
-            cookbook.DetermineRecipe();
-            cookbook.DisplayRecipe();
-            items.MakePitcher(cookbook.recipe);
-            items.DisplayInventory();
-
+         
             //Connection connection = new Connection();
             //connection.OpenConnection();
             //connection.CloseConnection();
