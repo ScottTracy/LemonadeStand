@@ -8,9 +8,16 @@ namespace LemonadeStand
 {
     class Store
     {
-        public int costOfSugar;
-        public int costOfLemons;
-        public int costOfCups;
-        public int costOfIceCubes;
+        
+        public Dictionary<string, double> priceGuide = new Dictionary<string, double> { { "cups of sugar", .30 }, { "lemons", .60 }, { "cups of ice", .10 }, { "cups", .05 } };
+        public double DetermineSale(double ingredient, int quantity)
+        {
+            return quantity * ingredient;
+        }
+      
+
+
     }
+
+
 }

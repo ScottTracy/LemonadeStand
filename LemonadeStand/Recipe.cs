@@ -8,8 +8,6 @@ namespace LemonadeStand
 {
     public class Recipe
     {
-
-        public int cupsPerPitcher = 8;
         public Dictionary<string, int> recipe = new Dictionary<string, int> { { "cups of sugar", 0 }, { "lemons", 0 }, { "cups of ice", 0 } };
         
        
