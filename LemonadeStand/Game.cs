@@ -8,5 +8,12 @@ namespace LemonadeStand
 {
     class Game
     {
+        //public void DetermineNoOfPlayers()
+        //{
+        //    Console.WriteLine("How many Players?")
+        //}
+        Human human = new Human();
+        
+
     }
 }

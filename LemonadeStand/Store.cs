@@ -19,6 +19,15 @@ namespace LemonadeStand
             Console.WriteLine(item.Key+ ": $" +item.Value );
             Console.ReadLine();
         }
+        public void DisplayPrices()
+        {
+            foreach(KeyValuePair<string, double> item in priceGuide)
+            {
+                DisplayPrice(item);
+            }
+
+            
+        }
 
 
     }
