@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
+    <Compile Include="DatabaseLoader.cs" />
+    <Compile Include="DatabaseSaver.cs" />
     <Compile Include="Day.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Human.cs" />

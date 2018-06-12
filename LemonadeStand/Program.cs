@@ -10,7 +10,7 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
-         
+           
             //Connection connection = new Connection();
             //connection.OpenConnection();
             //connection.CloseConnection();

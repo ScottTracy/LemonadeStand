@@ -14,7 +14,11 @@ namespace LemonadeStand
         {
             return quantity * ingredient;
         }
-      
+        public void DisplayPrice(KeyValuePair<string,double>item)
+        {
+            Console.WriteLine(item.Key+ ": $" +item.Value );
+            Console.ReadLine();
+        }
 
 
     }

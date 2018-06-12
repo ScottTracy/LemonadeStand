@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Day
+    class DatabaseSaver
     {
-        Weather weather;
-        Store store;
-        Recipe recipe;
     }
 }

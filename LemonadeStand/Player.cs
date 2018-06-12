@@ -51,15 +51,7 @@ namespace LemonadeStand
                 return int.Parse(input);
             }
         }
-        public void BuyLemons()
-        {
-            Console.WriteLine();
-        }
-        public void BuySugar()
-        {
-
-        }
-        public void BuyIce()
+        public void PurchaseItem(string item)
         {
 
         }
