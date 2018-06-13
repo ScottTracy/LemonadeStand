@@ -10,9 +10,9 @@ namespace LemonadeStand
     {
         
         public Dictionary<string, double> priceGuide = new Dictionary<string, double> { { "cups of sugar", .30 }, { "lemons", .60 }, { "cups of ice", .10 }, { "cups", .05 } };
-        public double DetermineSale(double ingredient, int quantity)
+        public double DetermineSale(string item, int quantity)
         {
-            return quantity * ingredient;
+            return quantity * priceGuide[item];
         }
         public void DisplayPrice(KeyValuePair<string,double>item)
         {

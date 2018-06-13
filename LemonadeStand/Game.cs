@@ -13,7 +13,10 @@ namespace LemonadeStand
         //    Console.WriteLine("How many Players?")
         //}
         Human human = new Human();
-        
+        public void StartGame()
+        {
+
+        }
 
     }
 }

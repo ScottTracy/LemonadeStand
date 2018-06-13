@@ -9,9 +9,9 @@ namespace LemonadeStand
     public class Inventory
     {               
                 
-        public double Money;
+        public double money;
         public int cupsInPitcher = 8;
-        public Dictionary<string, int> inventory = new Dictionary<string, int> { { "cups of sugar", 100 }, { "lemons", 100 }, { "cups of ice", 100 },{ "cups", 100} };
+        public Dictionary<string, int> inventory = new Dictionary<string, int> { { "cups of sugar", 0 }, { "lemons", 0 }, { "cups of ice", 0 },{ "cups", 100} };
         public void MakePitcher(Dictionary<string, int> recipe)
         {
             foreach (KeyValuePair<string, int> ingredient in recipe)
@@ -27,6 +27,12 @@ namespace LemonadeStand
             }
             Console.ReadLine();
         }
+        public void IncreaseInventory(string item, int number)
+        {
+            inventory[item] += number;
+        }
+       
+        
        
 
         

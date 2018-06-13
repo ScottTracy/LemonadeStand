@@ -35,7 +35,7 @@ namespace LemonadeStand
         {
             customerPriceLimit = random(1, (int)(priceLimit * 100)  + 1);
         }
-        public void SetPreferences(Func<int, int, int> random)
+        public void SetPreferences(Action<int,int> random)
         {
             SetSugarPreference(random);
             SetIcePreference(random);

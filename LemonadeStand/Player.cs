@@ -12,7 +12,7 @@ namespace LemonadeStand
         private Dictionary<string, int> looper = new Dictionary<string, int>();
         Inventory inventory = new Inventory();
         Recipe recipe = new Recipe();
-
+        Store store = new Store();
 
         public virtual void SetName()
         {
@@ -51,10 +51,50 @@ namespace LemonadeStand
                 return int.Parse(input);
             }
         }
-        public void PurchaseItem(string item)
+        
+        public void GoShopping()
         {
+            Console.WriteLine("Welcome to the store, here is a list of what you can buy:");
+            store.DisplayPrices();
+            foreach (KeyValuePair<string, double> item in store.priceGuide)
+            {
+                BuyItem(item);
+            }
+        }
+        public void BuyItem(KeyValuePair<string, double> item)
+        {
+            Console.WriteLine("You have $" + inventory.money);
+            Console.WriteLine("You have " + inventory.inventory[item.Key] + " " + item.Key + " in your inventory.");
+            Console.WriteLine("How many " + item.Key + " would you like to buy at $" + item.Value + " a piece?");
+            string itemString = Console.ReadLine();
+            if (int.TryParse(itemString, out int exception) == false)
+            {
+                Console.WriteLine("incorrect response, press <enter> to try again.");
+                Console.ReadLine();
+                BuyItem(item);
+                
+            }
+            else
+            {
+                int noOfItems = int.Parse(itemString);
+                double saleCost = store.DetermineSale(item.Key, noOfItems);
+                if (saleCost > inventory.money)
+                {
+                    Console.WriteLine("You do not have enough money in your inventory for that.  Press <enter>");
+                    Console.ReadLine();
+                    BuyItem(item);
+                }
+                else
+                {
+                    inventory.money -= saleCost;
+                    inventory.IncreaseInventory(item.Key, noOfItems);
+                }
+
+            }
+
 
         }
+        
 
     }
 }
