@@ -17,25 +17,36 @@ namespace LemonadeStand
         public double priceLimit = 1.00;
         public Dictionary<string, int> customerPreference = new Dictionary<string, int> { { "cups of sugar", 0 }, { "lemons", 0 }, { "cups of ice", 0 } };
         public double customerPriceLimit;
+        public int placeholderA;
+        public int placeholderB;
 
 
-        public void SetSugarPreference(Func<int, int, int> random)
+        public void SetSugarPreference(Func<int> random)
         {
-           customerPreference["cups of sugar"] = random(1, maxSugarPerPitcher + 1);
+            placeholderA = 1;
+            placeholderB = maxSugarPerPitcher + 1;
+
+           customerPreference["cups of sugar"] = random();
         }
-        public void SetIcePreference(Func<int, int, int> random)
+        public void SetIcePreference(Func<int> random)
         {
-            customerPreference["lemons"] = random(1, maxIcePerPitcher + 1);
+            placeholderA = 1;
+            placeholderB = maxIcePerPitcher + 1;
+            customerPreference["lemons"] = random();
         }
-        public void SetLemonPreference(Func<int, int, int> random)
+        public void SetLemonPreference(Func<int> random)
         {
-            customerPreference["cups of ice"] = random(1, maxLemonsPerPitcher + 1);
+            placeholderA = 1;
+            placeholderB = maxLemonsPerPitcher + 1;
+            customerPreference["cups of ice"] = random();
         }
-        public void SetPriceLimit(Func<int, int, int> random)
+        public void SetPriceLimit(Func<int> random)
         {
-            customerPriceLimit = random(1, (int)(priceLimit * 100)  + 1);
+            placeholderA = 1;
+            placeholderB = (int)(priceLimit * 100) + 1;
+            customerPriceLimit = random(); 
         }
-        public void SetPreferences(Action<int,int> random)
+        public void SetPreferences(Func<int> random)
         {
             SetSugarPreference(random);
             SetIcePreference(random);

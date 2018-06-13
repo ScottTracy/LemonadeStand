@@ -9,11 +9,11 @@ namespace LemonadeStand
     class Day
     {
         Random random = new Random();
+        Customer customer = new Customer();
         Weather weather = new Weather();
-        List<Dictionary<string,double>> customerList;
+        List<Dictionary<string,int>> customerList;
         int numberOfCustomers;
-        int placeholderA;
-        int placeholderB;
+      
         
         
         public void StartNewDay()
@@ -30,12 +30,13 @@ namespace LemonadeStand
             for(int i = 0; i< numberOfCustomers; i++)
             {
                 Customer customer = new Customer();
-                customer.SetPreferences(randomFunction(placeholderA, placeholderB));
+                customer.SetPreferences(RandomFunction);
+                customerList.Add(customer.customerPreference);
             }
         }
-        public void randomFunction(int min, int max)
+        public  int RandomFunction()
         {
-            random.Next(min, max);
+           return random.Next(customer.placeholderA, customer.placeholderB);
         }
         
     }
